@@ -1,11 +1,11 @@
 import Ember from 'ember';
-import getOwner from 'ember-getowner-polyfill';
 
 const {
   Service,
   getWithDefault,
   assert,
   get,
+  getOwner,
   set,
   copy,
   A: emberArray,
@@ -157,7 +157,7 @@ export default Service.extend({
     const Adapter = this._lookupAdapter(name);
     assert(`[ember-metrics] Could not find metrics adapter ${name}.`, Adapter);
 
-    return Adapter.create({ this, config });
+    return Adapter.create({ this, config, container: getOwner(this) });
   },
 
   /**
