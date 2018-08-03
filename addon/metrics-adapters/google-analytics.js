@@ -5,7 +5,6 @@ import BaseAdapter from './base';
 
 const {
   isPresent,
-  copy,
   assert,
   get,
   $,
@@ -20,7 +19,7 @@ export default BaseAdapter.extend({
   },
 
   init() {
-    const config = copy(get(this, 'config'));
+    const config = assign({}, get(this, 'config'));
     const { id } = config;
 
     assert(`[ember-metrics] You must pass a valid \`id\` to the ${this.toString()} adapter`, id);

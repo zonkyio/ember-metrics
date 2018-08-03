@@ -6,8 +6,8 @@ import BaseAdapter from './base';
 const {
   $,
   assert,
-  copy,
-  get
+  get,
+  assign
 } = Ember;
 
 export default BaseAdapter.extend({
@@ -16,7 +16,7 @@ export default BaseAdapter.extend({
   },
 
   init() {
-    const config = copy(get(this, 'config'));
+    const config = assign({}, get(this, 'config'));
     const segmentKey = config.key;
 
     assert(`[ember-metrics] You must pass a valid \`key\` to the ${this.toString()} adapter`, segmentKey);
