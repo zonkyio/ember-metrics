@@ -69,8 +69,7 @@
   ],
   "dependencies": {
     "broccoli-funnel": "^1.0.1",
-    "ember-cli-babel": "^6.6.0",
-    "ember-getowner-polyfill": "^2.0.0",
+    "ember-cli-babel": "^6.16.0",
     "ember-runtime-enumerable-includes-polyfill": "^2.0.0"
   },
   "ember-addon": {
